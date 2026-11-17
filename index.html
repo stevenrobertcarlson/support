@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Weekly Live Call | Working from the Heart</title>
+<meta name="description" content="Enter your email to receive fresh releases every Tuesday, plus invitations to join live Sedona Method support calls.">
+<meta property="og:site_name" content="Weekly Live Call | Working from the Heart">
+<meta property="og:title" content="Weekly Live Call | Working from the Heart">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Enter your email to receive fresh releases every Tuesday, plus invitations to join live Sedona Method support calls.">
+<meta property="og:image" content="https://support.workingfromtheheart.com/assets/images/card.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:url" content="https://support.workingfromtheheart.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?display=swap&family=Plus+Jakarta+Sans:wght@300;400;500;600;700" rel="stylesheet">
+<style>
+  :root {
+    --teal: #14b8a6;
+    --teal-focus: #1c7c7d;
+    --paper: #f9fbfc;
+    --card: #ffffff;
+    --ink: #333333;
+    --ink-soft: #555555;
+    --ink-deep: #1e293b;
+    --head-teal: #0f4c5c;
+    --line: #b0bec5;
+    --card-radius: 48px;
+    --pill-radius: 32px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; background: var(--paper); }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: var(--ink);
+    background: linear-gradient(135deg, var(--teal) 0%, var(--paper) 50%) fixed;
+  }
+  .page {
+    padding: 88px 16px 96px;
+    display: flex;
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+    max-width: 480px;
+    background: var(--card);
+    border-radius: var(--card-radius);
+    padding: 48px;
+    text-align: center;
+  }
+  h1 {
+    margin: 0 0 24px;
+    font-size: clamp(40px, 11vw, 64px);
+    font-weight: 600;
+    line-height: 1.125;
+    letter-spacing: -0.019em;
+    color: var(--head-teal);
+  }
+  .meta {
+    margin: 24px 0;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.375;
+    color: var(--ink-soft);
+  }
+  h2 {
+    margin: 32px 0 24px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  p {
+    margin: 24px 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.375;
+  }
+  .fine { font-size: 16px; font-weight: 300; }
+  form { margin: 6px 0; }
+  input[type="email"] {
+    display: block;
+    width: 100%;
+    height: 56px;
+    padding: 0 20px;
+    font: 400 20px/54px "Plus Jakarta Sans", sans-serif;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--pill-radius);
+    outline: none;
+  }
+  input[type="email"]::placeholder { color: var(--ink); opacity: .55; }
+  input[type="email"]:focus, .consent input:focus + label::before {
+    border-color: var(--teal-focus);
+    box-shadow: 0 0 0 1px var(--teal-focus);
+  }
+  .consent {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  .consent input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .consent label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.25;
+    cursor: pointer;
+  }
+  .consent label::before {
+    content: "";
+    flex: 0 0 42px;
+    height: 42px;
+    margin-right: 21px;
+    background: #fff center / 23px auto no-repeat;
+    border: 1px solid var(--line);
+    border-radius: var(--pill-radius);
+  }
+  .consent input:checked + label::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 648 552'%3E%3Cpath d='M225.3,517.7L2.1,293.1l68.1-67.7L226,382.3L578.1,35.6l67.4,68.4L225.3,517.7z' fill='%23333333'/%3E%3C/svg%3E");
+  }
+  .hp { position: absolute; left: -9999px; }
+  button {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    min-height: 40px;
+    padding: 0 20px;
+    font: 600 22px/40px "Plus Jakarta Sans", sans-serif;
+    color: #fff;
+    background: var(--teal);
+    border: 0;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+  button:focus-visible { outline: 2px solid var(--teal-focus); outline-offset: 3px; }
+  .status { margin: 16px 0 0; font-size: 16px; font-weight: 400; }
+  @media (max-width: 520px) {
+    .page { padding: 16px 12px 48px; }
+    .card { padding: 32px 24px; border-radius: 32px; }
+    .meta { font-size: 20px; }
+    button { font-size: 18px; }
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FMD4VX3XDJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FMD4VX3XDJ');
+</script>
+<!-- Meta Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '294121365918547');
+  fbq('track', 'PageView');
+</script>
+</head>
+<body>
+<main class="page">
+  <div class="card">
+    <h1>A Weekly Return to Presence</h1>
+    <p class="meta">Live support call • Fridays 9am Pacific • Come as you are</p>
+    <p>A live, human-led space to slow down, notice what's here, and let go.</p>
+    <p>Each call opens with a group release, followed by individual support, questions, sharing gains, or quiet listening.</p>
+    <p>No performance. No fixing.</p>
+    <p>A place to land.</p>
+    <h2>Get the replay and the weekly live call</h2>
+
+    <form id="optin" method="post" action="https://sendfox.com/form/3zp5j6/1gkde2" novalidate>
+      <input type="email" name="email" placeholder="Email" required autocomplete="email">
+      <div class="consent">
+        <input type="checkbox" id="consent" name="gdpr" value="1" required>
+        <label for="consent">Yes — send me the call link, replays, and emails from Working from the Heart</label>
+      </div>
+      <input class="hp" type="text" name="a_password" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div id="rc"></div>
+      <button type="submit">Get the Replay + Call Link</button>
+      <div class="status" id="status" role="status"></div>
+    </form>
+
+    <p class="fine">Free to join. No credit card, unsubscribe anytime.</p>
+    <p class="fine">Note: This page uses a basic analytics pixel. I run simple retargeting — nothing invasive. I might say hello again. Gently.</p>
+  </div>
+</main>
+<script>
+  // Form posts to the SendFox "The Free Support Call" form (list: Pulse). Invisible reCAPTCHA, as on SendFox's own form.
+  const RECAPTCHA_SITEKEY = "6Lemwu0UAAAAAJghn3RQZjwkYxnCTuYDCAcrJJ7S";
+
+  const form = document.getElementById('optin');
+  const status = document.getElementById('status');
+  let widgetId = null;
+  function sfReady() {
+    widgetId = grecaptcha.render('rc', {
+      sitekey: RECAPTCHA_SITEKEY,
+      size: 'invisible',
+      callback: () => form.submit()
+    });
+  }
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.gdpr.checked || !form.email.checkValidity() || !form.email.value) {
+      status.textContent = 'Please enter your email and tick the box.';
+      return;
+    }
+    if (form.a_password.value) return;
+    if (widgetId === null) { status.textContent = 'Still loading. Please try again in a moment.'; return; }
+    status.textContent = '';
+    grecaptcha.execute(widgetId);
+  });
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=sfReady&render=explicit" async defer></script>
+</body>
+</html>
