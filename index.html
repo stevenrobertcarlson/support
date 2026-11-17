@@ -141,6 +141,7 @@
     border-radius: 16px;
     cursor: pointer;
   }
+  button:disabled { opacity: .7; cursor: default; }
   button:focus-visible { outline: 2px solid var(--teal-focus); outline-offset: 3px; }
   .status { margin: 16px 0 0; font-size: 16px; font-weight: 400; }
   @media (max-width: 520px) {
@@ -198,23 +199,29 @@
 
   const form = document.getElementById('optin');
   const status = document.getElementById('status');
-  let widgetId = null;
+  const btn = form.querySelector('button');
+  const btnLabel = btn.textContent;
+  let widgetId = null, timer = null;
+  function say(msg, bad) { status.textContent = msg; status.style.color = bad ? '#b3261e' : ''; status.style.fontWeight = bad ? '600' : '400'; }
+  function reset() { clearTimeout(timer); btn.disabled = false; btn.textContent = btnLabel; }
   function sfReady() {
     widgetId = grecaptcha.render('rc', {
       sitekey: RECAPTCHA_SITEKEY,
       size: 'invisible',
-      callback: () => form.submit()
+      callback: () => { clearTimeout(timer); form.submit(); },
+      'error-callback': () => { reset(); say('Verification failed. Please try again.', true); },
+      'expired-callback': () => { reset(); }
     });
   }
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!form.gdpr.checked || !form.email.checkValidity() || !form.email.value) {
-      status.textContent = 'Please enter your email and tick the box.';
-      return;
-    }
+    if (!form.email.value || !form.email.checkValidity()) { say('Please enter a valid email address.', true); form.email.focus(); return; }
+    if (!form.gdpr.checked) { say('Please tick the box to continue.', true); return; }
     if (form.a_password.value) return;
-    if (widgetId === null) { status.textContent = 'Still loading. Please try again in a moment.'; return; }
-    status.textContent = '';
+    if (widgetId === null) { say('Still loading. Please try again in a moment. If this keeps happening, turn off your ad blocker for this page.', true); return; }
+    say('');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    timer = setTimeout(() => { reset(); say('This is taking too long. Please try again. If it keeps happening, turn off your ad blocker for this page.', true); }, 12000);
     grecaptcha.execute(widgetId);
   });
 </script>
